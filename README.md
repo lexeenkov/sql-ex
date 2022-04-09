@@ -1,4 +1,5 @@
 # sql-ex
+2022-04-09
 Decided to publish my playing around with *sql-ex.ru* exercises.
 
 The OLD file contains queries for the exercises from 1 to 55. I've done them during the semester as they were mandatory for one of the courses.

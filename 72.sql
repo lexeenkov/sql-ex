@@ -24,3 +24,11 @@ GROUP BY ID_psg , ID_comp
 ORDER BY rk aSC) x JOIN PAssenger p ON x.ID_psg=p.ID_psg
 WHERE rk=1
 ;
+-- v.3 , still nothing
+SELECT DISTINCT name , qty FROM (
+SELECT  ID_comp , ID_psg, COUNT(*) qty , RANK() OVER (PARTITION BY ID_comp Order by qty DESC) AS rk , RANK() OVER (Order by qty DESC) as rk2
+FROM trip t JOIN Pass_in_trip p ON p.trip_no=t.trip_no
+GROUP BY ID_psg , ID_comp
+ORDER BY rk aSC) x JOIN PAssenger p ON x.ID_psg=p.ID_psg
+WHERE rk2=1
+;
